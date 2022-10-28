@@ -1,14 +1,29 @@
 package app.curso.banco.util;
 
+import app.curso.banco.util.utiles;
+import java.util.Random;
 
-	import java.lang.Math;
+public class utiles {
 
-	public class utiles {
+	public static final String[] NOMBRES = { "Jose", "Pedro", "Mario", "Leo" };
 
-		// calcula un número aleatorio entre max y min y lo devuelve como entero
-		public static int getRandom(int max, int min) {
-			return (int) Math.random() * (max - min + 1) + min;
-		}
+	public static final String[] APELLIDOS = { "Escola", "Montilla", "Marquina", "Arangure" };
+
+	public static String nombreAleatorio(String[] nombres, String[] apellidos) {
+
+		Random random = new Random();
+
+		int indexNombre = random.nextInt(nombres.length);
+		String nombreAleatorio = nombres[indexNombre];
+
+		int indexApellidos = random.nextInt(apellidos.length);
+		String apellidosAleatorios = apellidos[indexApellidos];
+		
+		String nombreCompleto = nombreAleatorio + " "+ apellidosAleatorios;
+
+	    System.out.println(nombreCompleto);
+		return nombreCompleto;
 
 	}
-
+	
+}
